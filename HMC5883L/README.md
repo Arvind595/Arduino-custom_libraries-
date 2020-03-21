@@ -1,4 +1,5 @@
 #HMC5883L Library
+Also visit http://fritzing.org/projects/digital_compass
 ## Arduino Code
 
 There are a few simple rules for using that library. Please read the following summary and apply it to your project
