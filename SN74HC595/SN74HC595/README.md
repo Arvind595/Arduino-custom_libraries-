@@ -81,7 +81,8 @@ sr.enableOutput();
   for (int i = 1; i <= 16; i++) {
     sr.setPin(i, HIGH);
     delay(100);
-  }}
+  }
+  }
 ```
 
 also adjust the brightness you want
