@@ -50,7 +50,7 @@ The values used for object deceleration can take the following values:
     uint8_t outputEnablePin; // output enable must be PWM pin
 ```
 
-### Read values
+### Set values
 
 How to use the functions is as follows.
 
@@ -122,14 +122,21 @@ void loop(){
   Serial.print("status of pin 8 : ");
   Serial.println(sr.getPin(8));
 }
+```
 
 ## Basic example
+
+It can be seen as a collection of the contents mentioned above.
+
 ```cpp
+
 #include "SN74HC595.h"
 SN74HC595 sr(2, 5, 6, 3, 9);
+
 void setup() {
 Serial.begin(9600);
 }
+
 void loop() {
  //to set values register wise.
   //sr.set(register number(starting from 0), value(unsigned 8-bit));
@@ -145,4 +152,5 @@ void loop() {
   
   delay(1000);
 }
+
 ```
