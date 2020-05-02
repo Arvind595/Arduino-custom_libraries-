@@ -1,0 +1,18 @@
+##SN74HC595##
+
+
+SN74HC595	KEYWORD1
+
+setALlHigh	KEYWORD2
+setALlLow	KEYWORD2
+
+set	KEYWORD2
+setPin	KEYWORD2
+
+brightness	KEYWORD2
+
+disableOutput	KEYWORD2
+enableOutput	KEYWORD2
+
+getAll	KEYWORD2
+getPin	KEYWORD2

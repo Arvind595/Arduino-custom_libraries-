@@ -1,0 +1,1 @@
+open the.fz file in fritzing software, and follow the wiring then the code.
