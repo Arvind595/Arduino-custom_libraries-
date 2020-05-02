@@ -34,11 +34,6 @@ SN74HC595 sr(2, 5, 6, 3);
 
 ### initialization
 
-SN74HC595 setting function.
-
-```cpp
-```
-
 If you want more detailed settings, you can use it as follows.
 
 ```cpp
@@ -46,12 +41,12 @@ If you want more detailed settings, you can use it as follows.
 SN74HC595 sr(2, 5, 6, 3, 9);
 ```
 
-The values â€‹â€‹used for setMode can take the following values:
+The values used for object deceleration can take the following values:
 
-``` uint8_t registers; //number of refisters
+``` uint8_t registers;        //number of refisters
     uint8_t dataPin;   
-    uint8_t latchPin;	//combined latch pin
-    uint8_t clockPin;	combined clock pin
+    uint8_t latchPin;	        //combined latch pin
+    uint8_t clockPin;	        //combined clock pin
     uint8_t outputEnablePin; // output enable must be PWM pin
 ```
 
@@ -129,16 +124,12 @@ void loop(){
 }
 
 ## Basic example
-
-It can be seen as a collection of the contents mentioned above.
-
 ```cpp
 #include "SN74HC595.h"
 SN74HC595 sr(2, 5, 6, 3, 9);
-
 void setup() {
+Serial.begin(9600);
 }
-
 void loop() {
  //to set values register wise.
   //sr.set(register number(starting from 0), value(unsigned 8-bit));
@@ -148,6 +139,10 @@ void loop() {
 
   //to set 0xB5 at register 1.
   sr.set(1, 0b10110101);
+  
+  Serial.print("status register 0 : ");
+  Serial.println(sr.getAll(0), HEX);
+  
   delay(1000);
 }
 ```
