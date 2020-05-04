@@ -5,3 +5,4 @@ SN74HC165	KEYWORD1
 
 readAll	KEYWORD2
 readPin	KEYWORD2
+lastUpdateRead  KEYWORD2
