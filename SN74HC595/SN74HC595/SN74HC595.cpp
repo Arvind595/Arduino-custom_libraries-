@@ -101,5 +101,5 @@ uint8_t SN74HC595::getAll(uint8_t chip) {
   return _binary[chip];
 }
 bool SN74HC595::getPin(const uint8_t pin) {
-  return _binary[getChipNumber(pin)];
+  return ((_binary[getChipNumber(pin)]>>pin)&1);
 }
