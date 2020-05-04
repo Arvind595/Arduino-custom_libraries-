@@ -46,11 +46,11 @@ void SN74HC165::pulseClock(){
     delay(1);
 }
 
-uint16_t SN74HC165::readAll(){
-	uint16_t binary=0;
+uint8_t SN74HC165::readAll(){
+	uint8_t binary=0;
 	snapshot();
     
-   for(uint8_t i =0; i<(_registers*8); i++){
+   for(uint8_t i =0; i<(8); i++){
 	bool pinstate=digitalRead(_serialDataPin);
     pulseClock();
     binary=(binary<<1) | pinstate;
@@ -58,20 +58,7 @@ uint16_t SN74HC165::readAll(){
 	
 	return binary;
 }
-
-bool SN74HC165::readPin(const uint8_t pin){
-	if(pin<=(_registers*8)){
-	snapshot();
-	uint8_t i;
-	for(i=8;i!=pin;i--){
-	pulseClock();
-	}
-	if(i==pin){
-		return digitalRead(_serialDataPin);
-	}
-	}
-	else return 0;
-}	
+	
 uint8_t SN74HC165::readAll(uint8_t chipNumber){
 	//starts from 0th chip;
 	for(uint8_t i=0; i<chipNumber;i++){
@@ -80,6 +67,16 @@ uint8_t SN74HC165::readAll(uint8_t chipNumber){
 	
 	return _binary[chipNumber];
 }	
+bool SN74HC165::readPin(const uint8_t pin){
+	  uint8_t chipn = 0;
+  for (unsigned int i = 8, j = 8; i <= 4080; i = i + 8, j = j + 7) {
+    if (pin <= i) {
+      chipn = i - j;
+      break;
+    }
+  }
+  return _binary[chipn]>>pin;
+}
 uint8_t SN74HC165::lastUpdateRead(uint8_t chipNumber){
 	return _binary[chipNumber];
 }
