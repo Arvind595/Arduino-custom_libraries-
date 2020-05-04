@@ -1,4 +1,4 @@
-//example for 74_165 (PISO) using IO_EXPANDER.
+//example for 74HC165.
 
 #include<SN74HC165.h>
 
@@ -12,7 +12,7 @@ Serial.begin(115200);
 
 void loop() {
 	
-// reading all the input pins : readAll() --> returns 16-bit of last two registers in chain
+// reading all the input pins : readAll() --> returns 8-bit of last register in chain
 //readAll(uint8_t chipNumber); to read one register at a time.starting from 0.it latches for every call
 //Serial.println(io.readAll(0),BIN);
 Serial.println(io.readAll(),BIN);
