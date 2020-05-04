@@ -75,7 +75,7 @@ bool SN74HC165::readPin(const uint8_t pin){
       break;
     }
   }
-  return _binary[chipn]>>pin;
+  return ((_binary[chipn]>>pin)& 1);
 }
 uint8_t SN74HC165::lastUpdateRead(uint8_t chipNumber){
 	return _binary[chipNumber];
