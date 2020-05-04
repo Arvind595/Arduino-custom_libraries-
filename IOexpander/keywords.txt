@@ -1,7 +1,0 @@
-##IOEXPANDER##
-
-
-IOexpander	KEYWORD1
-
-readAll	KEYWORD2
-readPin	KEYWORD2
