@@ -15,7 +15,7 @@ class SN74HC165{
 	
 	SN74HC165(const uint8_t registers,const uint8_t serialDataPin, const uint8_t clockPin,const uint8_t latchPin);
 	
-	uint16_t readAll();
+	uint8_t readAll();
 	uint8_t readAll(uint8_t chipNumber);
 	uint8_t lastUpdateRead(uint8_t chipNumber);
 	bool readPin(const uint8_t pin);
