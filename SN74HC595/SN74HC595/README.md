@@ -22,7 +22,7 @@ void loop(){
 
 ### Object Declaration
 
-The object declaration method. It is used outside the setup statement, and a name such as hmc can be changed to any other name you want.
+The object declaration method. It is used outside the setup statement, and a name such as sr can be changed to any other name you want.
 
 ```cpp
 #include <SN74HC595.h>
